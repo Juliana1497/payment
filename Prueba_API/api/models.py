@@ -8,3 +8,4 @@ class Payment(models.Model):
     card_cvv=models.IntegerField()
     total_value=models.BigIntegerField()
     extra_description=models.CharField(max_length=500, blank=True, null=True)
+    comission_value=models.FloatField(blank=True, null=True)
