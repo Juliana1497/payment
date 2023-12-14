@@ -27,7 +27,7 @@ class PaymentView(View):
             if(len(str_card_cvv)== 3):
                 if(jd['total_value'] >=1000):
                     Payment.objects.create(name=jd['name'], surname=jd['surname'], card_number=final_card_number, total_value=jd['total_value'],extra_description=jd['extra_description'], comission_value=float_comission_value*0.03+((float_comission_value*0.03)*0.19)+(float_comission_value*0.015))
-                    datos={'message':'Success'}
+                    datos=card_type(jd['card_number'])  
                 else:
                     datos={'message':'El valor mínimo a pagar es de $1000'}
             else:
@@ -49,3 +49,15 @@ def hide_card_number(chain):
     resultado = re.sub(pattern, replace, chain)
     
     return resultado
+
+def card_type(chain):
+    first_number=int(chain[0])
+    if first_number== 4:
+        datos = {'message':'El tipo de tarjeta es Visa'}
+    elif first_number == 5:
+        datos = {'message':'El tipo de tarjeta es Mastercard'}
+    elif first_number == 3:
+        datos = {'message':'El tipo de tarjeta es Diners'}
+    else:
+        datos = {'message':'El tipo de tarjeta es diferente a Visa, Mastercard o Diners'}
+    return datos
