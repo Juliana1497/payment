@@ -3,6 +3,7 @@ from django.utils.decorators import method_decorator
 from django import http
 from django.http.response import JsonResponse
 from django.views import View
+from rest_framework.permissions import IsAuthenticated
 from django.views.decorators.csrf import csrf_exempt
 from .models import Payment
 import json
@@ -11,6 +12,8 @@ import re
 # Create your views here.
 
 class PaymentView(View):
+
+    permission_classes = [IsAuthenticated]
 
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
