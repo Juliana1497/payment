@@ -1,8 +1,10 @@
-El proyecto backend fue realizado con el framework Django.
+The backend project was carried out with the Django framework.
 
-El lenguaje de programación utilizado fue Python.
+The programming language used was Python.
 
-La base de datos utilizada fue MySQL.
+The database used was MySQL.
 
-La documentación para poder arrancar el proyecto la podra encontrar en el siguiente enlace:
+The documentation to start the project can be found at the following link:
+
+https://docs.google.com/document/d/1US0BCCBRTCNUDsIPCOum0GsUkeOptd9U/edit?usp=sharing&ouid=105915799867945357472&rtpof=true&sd=true
 
