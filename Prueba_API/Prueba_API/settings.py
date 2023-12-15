@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Stripe API keys
+STRIPE_PUBLIC_KEY = 'pk_test_51ONGyjIyoJgdWjCe24KPneUjL4tVSIcaDznZR1FFezP1ZnVQ6SfQFkmkYM9t8ymVGZPsrFzxbBQIKZHhkFWthB2S00nBlZcjbG'
+STRIPE_PRIVATE_KEY = 'sk_test_51ONGyjIyoJgdWjCeylcNxZViq7rJVffFJMqh5hdT8BJL6ywh9Uo940oa5RhSh5BBfSvegkx9FfV9VbAWW8yzCKtz00PTNbSOJD'
 
 # Application definition
 
@@ -42,8 +45,10 @@ INSTALLED_APPS = [
     'api',
     'rest_framework_simplejwt',
     'rest_framework',
-    'user_payment.apps.UserPaymentConfig'
 ]
+
+DJSTRIPE_WEBHOOK_SECRET = 'whsec_Rhig0fD1BXlRyufhF0a6nOxgVuvtskBN'
+DJSTRIPE_USE_NATIVE_JSONFIELD = True
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
