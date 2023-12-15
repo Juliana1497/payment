@@ -1,4 +1,3 @@
-##APIREST##
 El proyecto backend fue realizado con el framework Django.
 
 El lenguaje de programación utilizado fue Python.
